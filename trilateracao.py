@@ -31,3 +31,5 @@ Mtr1 = Mtr0.transpose()
 Mtr2 = np.array([[A1*C1+A2*C2+A3*C3],
                 [B1*C1+B2*C2+B3*C3]])
 coordenadas = np.dot(Mtr1,Mtr2)
+
+
