@@ -2,8 +2,8 @@ import asyncio
 
 from bleak import BleakScanner
 
-# with open('coleta.csv', 'a') as f:
-#     f.write('Address,RSSI\n')    
+with open('coleta.csv', 'a') as f:
+    f.write('Address,RSSI\n')    
 
 async def main():
     global a,b,c    
