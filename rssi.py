@@ -2,8 +2,8 @@ import asyncio
 
 from bleak import BleakScanner
 
-with open('coleta.csv', 'a') as f:
-    f.write('Address,RSSI\n')    
+# with open('coleta.csv', 'a') as f:
+#     f.write('Address,RSSI\n')    
 
 async def main():
     global a,b,c    
@@ -31,8 +31,8 @@ async def main():
 a=0
 b=0
 c=0
-coordx=2
-coordy=10
+coordx=9
+coordy=6
 for i in range(0,2050):
     
     asyncio.run(main())
