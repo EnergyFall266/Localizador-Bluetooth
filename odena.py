@@ -1,9 +1,9 @@
 import pandas as pd
-from sqlalchemy import false
 
 
-df = pd.read_csv('coleta.csv')
 
-df=df.sort_values(by=['CoordX', 'CoordY','Address'])
+df = pd.read_csv('results21.csv')
 
-df.to_csv('ordenado.csv',index=False)
+df=df.sort_values(by=['mse'])
+
+df.to_csv('resultsOrd21.csv',index=False)

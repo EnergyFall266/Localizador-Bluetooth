@@ -1,3 +1,4 @@
+layer1,layer2,actFunc,learning,mse,mae
 10,10,<class 'torch.nn.modules.activation.Sigmoid'>,0.1,3.2994565963745117,1.5912857055664062
 10,10,<class 'torch.nn.modules.activation.Sigmoid'>,0.01,3.180858850479126,1.5705817937850952
 10,10,<class 'torch.nn.modules.activation.Sigmoid'>,0.001,2.4411227703094482,1.2781206369400024
