@@ -2,8 +2,8 @@ import pandas as pd
 
 
 
-df = pd.read_csv('results41.csv')
+df = pd.read_csv('erros_coord.csv')
 
-df=df.sort_values(by=['mse'])
+df=df.sort_values(by=['CoordX','CoordY'])
 
-df.to_csv('resultsOrd41.csv',index=False)
+df.to_csv('erroCoordOrd.csv',index=False)
