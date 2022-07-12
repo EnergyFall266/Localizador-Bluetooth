@@ -25,21 +25,21 @@ y3 = 11
 # d2 = int(input("distancia beacon 2: "))
 # d3 = int(input("distancia beacon 3: "))
 
-n1 = 2.48
-n2 = 2.80
-n3 = 1.88
+# n1 = 2.48
+# n2 = 2.80
+# n3 = 1.88
 
-RSSdo1 = -47
+# RSSdo1 = -47
 
-RSSdo2 = -47
+# RSSdo2 = -47
 
-RSSdo3 = -48
-
-RSSI1 = -40
-
-RSSI2 = -61
-
-RSSI3 = -64
+# RSSdo3 = -48
+# # 3c
+# RSSI1 = -60
+# # 4c
+# RSSI2 = -47
+# # 90
+# RSSI3 = -51
 
 # n1 = float(input("n1: "))
 # RSSdo1 = int(input("RSSdo1: "))
@@ -55,37 +55,30 @@ RSSI3 = -64
 
 
 
-# d1 = np.round(np.power(10,((RSSdo1 - RSSI1)/(10*n1))),2)
+# b1 = np.round(np.power(10,((RSSdo1 - RSSI1)/(10*n1))),2)
 
-# d2 = np.round(np.power(10,((RSSdo2 - RSSI2)/(10*n2))),2)
+# b2 = np.round(np.power(10,((RSSdo2 - RSSI2)/(10*n2))),2)
 
-# d3 = np.round(np.power(10,((RSSdo3 - RSSI3)/(10*n3))),2)
-
-x1 = 7
-y1 = 0
-x2 = 11
-y2 = 8
-x3 = 0
-y3 = 11
+# b3 = np.round(np.power(10,((RSSdo3 - RSSI3)/(10*n3))),2)
 
 
-d1 = (np.power((5-x1),2)/2)+(np.power((0-y1),2)/2)
+# print(b1)
+# print(b2)
+# print(b3)
 
-d2 = (np.power((5-x2),2)/2)+(np.power((0-y2),2)/2)
+# x1 = 7
+# y1 = 0
+# x2 = 11
+# y2 = 8
+# x3 = 0
+# y3 = 11
 
-d3 = (np.power((5-x3),2)/2)+(np.power((0-y3),2)/2)
 
-print(d1)
-print(d2)
-print(d3)
 
-dd1=np.sqrt(d1/2)
-dd2=np.sqrt(d2/2)
-dd3=np.sqrt(d3/2)
 
-print(dd1)
-print(dd2)
-print(dd3)
+# print(d1)
+# print(d2)
+# print(d3)
 
 # Trilateracao
 
@@ -100,81 +93,80 @@ B3 = 2*(y3-y2)
 
 
 
-# with open('datasetRNAtrilat1.csv','r') as f:
-#     reader = csv.reader(f)
-#     dist1 = list(reader)
-# with open('datasetRNAtrilat2.csv','r') as s:
-#     reader = csv.reader(s)
-#     dist2 = list(reader)
-# with open('datasetRNAtrilat3.csv','r') as b:
-#     reader = csv.reader(b)
-#     dist3 = list(reader)
+with open('dist1.csv','r') as f:
+    reader = csv.reader(f)
+    dist1 = list(reader)
+with open('dist2.csv','r') as s:
+    reader = csv.reader(s)
+    dist2 = list(reader)
+with open('dist3.csv','r') as b:
+    reader = csv.reader(b)
+    dist3 = list(reader)
 
-# flat_list1 = []
-# flat_list2 = []
-# flat_list3 = []
-# for xs in dist1:
-#     for x in xs:
-#         flat_list1.append(x)
+flat_list1 = []
+flat_list2 = []
+flat_list3 = []
+for xs in dist1:
+    for x in xs:
+        flat_list1.append(x)
 
-# for gs in dist2:
-#     for g in gs:
-#         flat_list2.append(g)
+for gs in dist2:
+    for g in gs:
+        flat_list2.append(g)
 
-# for hs in dist3:
-#     for h in hs:
-#         flat_list3.append(h)
+for hs in dist3:
+    for h in hs:
+        flat_list3.append(h)
 
-# d1 = list(map(float, flat_list1))
+b1 = list(map(float, flat_list1))
 
-# d2 = list(map(float, flat_list2))
+b2 = list(map(float, flat_list2))
 
-# d3 = list(map(float, flat_list3))
-
-# # d1 = 7.16
-# # d2 = 1.78
-# # d3 = 9.52
-
-# d1=0.5
-# d2=4.80
-# d3=6
-# i=0
-# while i<len(d1):
-
-# C1 = np.power(d1,2) - np.power(d2,2) + np.power(x2,2) - np.power(x1,2) + np.power(y2,2) - np.power(y1,2)
-# C2 = np.power(d1,2) - np.power(d3,2) + np.power(x3,2) - np.power(x1,2) + np.power(y3,2) - np.power(y1,2)
-# C3 = np.power(d2,2) - np.power(d3,2) + np.power(x3,2) - np.power(x2,2) + np.power(y3,2) - np.power(y2,2)
-
-    # C1 = d1[i] - d2[i] + np.power(x2,2) - np.power(x1,2) + np.power(y2,2) - np.power(y1,2)
-    # C2 = d1[i] - d3[i] + np.power(x3,2) - np.power(x1,2) + np.power(y3,2) - np.power(y1,2)
-    # C3 = d2[i] - d3[i] + np.power(x3,2) - np.power(x2,2) + np.power(y3,2) - np.power(y2,2)
-
-C1 = dd1 - dd2 + np.power(x2,2) - np.power(x1,2) + np.power(y2,2) - np.power(y1,2)
-C2 = dd1 - dd3 + np.power(x3,2) - np.power(x1,2) + np.power(y3,2) - np.power(y1,2)
-C3 = dd2 - dd3 + np.power(x3,2) - np.power(x2,2) + np.power(y3,2) - np.power(y2,2)
-
-Mtr0 = np.array([[np.power(A1,2)+np.power(A2,2)+np.power(A3,2), A1*B1+A2*B2+A3*B3],
-                [A1*B1+A2*B2+A3*B3, np.power(B1,2)+np.power(B2,2)+np.power(B3,2)]])
-
-Mtr1 = np.linalg.inv(Mtr0)
-
-Mtr2 = np.array([[A1*C1+A2*C2+A3*C3],
-                [B1*C1+B2*C2+B3*C3]])
-
-coordenadas = np.round(np.dot(Mtr1,Mtr2),2)
-print(coordenadas)
-    # with open('trilatRNACoord.csv', 'a') as f:
-    #             f.write(f'{coordenadas[0][0]},{coordenadas[1][0]}\n')
-    # i+=1
+b3 = list(map(float, flat_list3))
 
 
-# # log distance
-# distancia = np.power(10,((RSSd0 - RSSImedio)/10*n))
-# # calculo do n
-# RSSI = []
-# nList = []
-# for i in RSSI:
-#     ene = (RSSd0 - RSSI[i])/(10*log10(d))
-#     nList.append(ene)
 
+i=0
+while i<len(b1):
+
+    d1 = np.round(b1[i]/0.45)
+    d2 = np.round(b2[i]/0.45)
+    d3 = np.round(b3[i]/0.45)
+
+    C1 = d1 - d2 + np.power(x2,2) - np.power(x1,2) + np.power(y2,2) - np.power(y1,2)
+    C2 = d1 - d3 + np.power(x3,2) - np.power(x1,2) + np.power(y3,2) - np.power(y1,2)
+    C3 = d2 - d3 + np.power(x3,2) - np.power(x2,2) + np.power(y3,2) - np.power(y2,2)
+
+# C1 = d1 - d2 + np.power(x2,2) - np.power(x1,2) + np.power(y2,2) - np.power(y1,2)
+# C2 = d1 - d3 + np.power(x3,2) - np.power(x1,2) + np.power(y3,2) - np.power(y1,2)
+# C3 = d2 - d3 + np.power(x3,2) - np.power(x2,2) + np.power(y3,2) - np.power(y2,2)
+
+    Mtr0 = np.array([[np.power(A1,2)+np.power(A2,2)+np.power(A3,2), A1*B1+A2*B2+A3*B3],
+                    [A1*B1+A2*B2+A3*B3, np.power(B1,2)+np.power(B2,2)+np.power(B3,2)]])
+
+    Mtr1 = np.linalg.inv(Mtr0)
+
+    Mtr2 = np.array([[A1*C1+A2*C2+A3*C3],
+                    [B1*C1+B2*C2+B3*C3]])
+
+    coordenadas = np.round(np.dot(Mtr1,Mtr2),2)
+# print(coordenadas)
+    with open('trilatCoord.csv', 'a') as f:
+                f.write(f'{coordenadas[0][0]},{coordenadas[1][0]}\n')
+    i+=1
+
+
+
+# trilateration 2
+
+# Mtr0 = np.array([[2*(x1-x3), 2*(y1-y3)],
+#                  [2*(x2-x3), 2*(y2-y3)]])
+
+# Mtr1 = np.linalg.inv(Mtr0)
+
+# Mtr2 = np.array([[np.power(x1,2)-np.power(x3,2)+np.power(y1,2)-np.power(y3,2)+d3-d1],
+#                 [np.power(x2,2)-np.power(x3,2)+np.power(y2,2)-np.power(y3,2)+d3-d2]])
+
+# coordenadas = np.round(np.dot(Mtr1,Mtr2),2)
+# print(coordenadas)
 
